@@ -19,16 +19,6 @@ impl IncrementContract {
 
         count
     }
-    //Contract Data Access.
-    let mut count: u32 = env
-    .storage()
-    .instance()
-    .get(&COUNTER)
-    .unwrap_or(0); // If no value set, assume 0.
-    env.storage()
-    .instance()
-    .set(&COUNTER, &count);
-    env.storage().instance().extend_ttl(100, 100);stellar contract build
 }
 
 mod test;
